@@ -1,0 +1,20 @@
+[
+    {
+        "class": "section",
+        "link:": "images/rooms.png",
+        "resource": "/rooms",
+        "alt": "Img"
+    },
+    {
+        "class": "section",
+        "link:": "images/dive-site.png",
+        "resource": "/travel",
+        "alt": "Img"
+    },
+    {
+        "class": "section",
+        "link:": "images/food.png",
+        "resource": "/meals",
+        "alt": "Img"
+    }
+]
