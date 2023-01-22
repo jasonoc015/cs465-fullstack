@@ -1,0 +1,20 @@
+[
+    {
+        "genre": "SeaFood Special",
+        "name": "Fried Salmon Special",
+        "image": "seafoods.jpg",
+        "review": "...I'm a product overview. Here you can write more information about your product. Buyers like to know ..."
+    },
+    {
+        "genre": "Sumptuous Desserts",
+        "name": "Choco Ice Cream Sandwich",
+        "image": "desserts.jpg",
+        "review": "...I'm a product overview. Here you can write more information about your product. Buyers like to know ..."
+    },
+    {
+        "genre": "Buffet",
+        "name": "Mixed Buffet",
+        "image": "buffet.jpg",
+        "review": "...I'm a product overview. Here you can write more information about your product. Buyers like to know ..."
+    }
+]
