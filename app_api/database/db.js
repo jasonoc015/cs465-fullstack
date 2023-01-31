@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
 const host = process.env.DB_HOST || '127.0.0.1'
 const dbURI = `mongodb://${host}/travlr`;
+//const dbURI = `mongodb://127.0.0.1:27017/travlr`;
 const readLine = require('readline');
 
 mongoose.set('useUnifiedTopology', true);
@@ -27,7 +28,7 @@ mongoose.connection.on('disconnected', () => {
 if (process.platform === 'win32') {
     const rl = readLine.createInterface({
         input: process.stdin,
-        output: pricess.stdout
+        output: process.stdout
     });
     rl.on('SIGINT', () => {
         process.emit('SIGINT');
