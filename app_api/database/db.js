@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const host = process.env.DB_HOST || '127.0.0.1'
-const dbURI = `mongodb://${host}/travlr`;
-//const dbURI = `mongodb://127.0.0.1:27017/travlr`;
+//const dbURI = `mongodb://${host}/travlr`;
+const dbURI = 'mongodb://127.0.0.1:27017/travlr';
 const readLine = require('readline');
 
 mongoose.set('useUnifiedTopology', true);
@@ -61,4 +61,4 @@ const gracefulShutdown = (msg, callback) => {
     });
   });
   
-  require('./models/travlr');
+require('./models/travlr');
