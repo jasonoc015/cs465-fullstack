@@ -60,5 +60,7 @@ const gracefulShutdown = (msg, callback) => {
       process.exit(0);
     });
   });
+
+connect();
   
 require('./models/travlr');

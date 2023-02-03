@@ -44,7 +44,7 @@ const travelList = (req, res) => {
             renderTravelList(req, res, body);
         }
     )
-}
+};
 
 module.exports = {
     travelList
