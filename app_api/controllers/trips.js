@@ -101,11 +101,29 @@ const tripsUpdateTrip = async (req, res) => {
                 .json(err);
         });
 }
-   
+ 
+// DELETE: /trips/:tripcode
+const deleteTrip = async (req, res) => {
+    model
+        .deleteOne({'code': req.params.tripCode})
+        .exec((err, trip) => {
+            if (err){
+                return res 
+                    .status(404)
+                    .json(err);
+            }
+            else{
+                return res
+                    .status(200)
+                    .json({message: "Successfully deleted!"})
+            }
+        });
+};
 
 module.exports = {
     tripsList,
     tripsFindCode,
     tripsAddTrip,
+    deleteTrip,
     tripsUpdateTrip
 };
