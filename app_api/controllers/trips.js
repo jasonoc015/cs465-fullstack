@@ -114,7 +114,7 @@ const tripsUpdateTrip = async (req, res) => {
 // DELETE: /trips/:tripcode
 const deleteTrip = async (req, res) => {
     Trip
-        .deleteOne({'code': req.params.tripCode})
+        .deleteOne({ code: req.params.tripCode})
         .exec((err, trip) => {
             if (err){
                 return res 

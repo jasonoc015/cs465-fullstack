@@ -41,10 +41,20 @@ export class TripDataService {
     console.log('Inside TripDataService#upateTrip');
     console.log(formData);
     return this.http
-    .put(this.tripUrl + formData.code, formData)
-    .toPromise()
-    .then(response => response.json() as Trip[])
-    .catch(this.handleError);
+      .put(this.tripUrl + formData.code, formData)
+      .toPromise()
+      .then(response => response.json() as Trip[])
+      .catch(this.handleError);
+  }
+
+  public deleteTrip(tripCode: string): Promise<any> {
+    console.log('Inside TripDataService#deleteTrip');
+    console.log(tripCode);
+    return this.http
+      .delete(this.tripUrl + tripCode)
+      .toPromise()
+      .then(response => response.json() as Trip)
+      .catch(this.handleError);
   }
    
 
