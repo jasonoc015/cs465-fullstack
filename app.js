@@ -56,7 +56,7 @@ app.use('/about', aboutRouter);
 app.use('/contact', contactRouter);
 app.use('/api', apiRouter);
 
-//catch unauthorized error and createw 401
+//catch unauthorized error and create 401
 app.use(function(err, req, res, next){
   if (err.name === 'UnauthorizedError'){
     res

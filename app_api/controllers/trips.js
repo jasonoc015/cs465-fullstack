@@ -45,6 +45,7 @@ const tripsFindCode = async (req, res) => {
 };
 
 const tripsAddTrip = async (req, res) => {
+    console.log('tripsAddTrip ivoked with:\n' + req.body);
     getUser(req, res,
         (req, res) => {
         Trip
@@ -69,7 +70,7 @@ const tripsAddTrip = async (req, res) => {
                         .json(trip);
                 }
             });
-            }
+        }
     );
 };
 
@@ -113,20 +114,25 @@ const tripsUpdateTrip = async (req, res) => {
  
 // DELETE: /trips/:tripcode
 const deleteTrip = async (req, res) => {
-    Trip
-        .deleteOne({ code: req.params.tripCode})
-        .exec((err, trip) => {
-            if (err){
-                return res 
-                    .status(404)
-                    .json(err);
-            }
-            else{
-                return res
-                    .status(200)
-                    .json({message: "Successfully deleted!"})
-            }
-        });
+    console.log(req.body);
+    getUser(req, res,
+        (req, res) => {
+        Trip
+            .deleteOne({ code: req.params.tripCode})
+            .exec((err, trip) => {
+                if (err){
+                    return res 
+                        .status(404)
+                        .json(err);
+                }
+                else{
+                    return res
+                        .status(200)
+                        .json({message: "Successfully deleted!"})
+                }
+            });
+        }
+    );
 };
 
 
