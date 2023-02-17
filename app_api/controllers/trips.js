@@ -26,7 +26,7 @@ const tripsList = async (req, res) => {
 // GET: /trips/:tripcode a single trip
 const tripsFindCode = async (req, res) => {
     Trip
-        .find({'code': req.params.tripCode})
+        .find({code : req.params.tripCode})
         .exec((err, trip) => {
             if (!trip) {
                 return res
@@ -137,9 +137,10 @@ const deleteTrip = async (req, res) => {
 
 
 const getUser = (req, res, callback) => {
-    if (req.payload && req.payload.email) {
+
+    if (req.auth && req.auth.email) {
         User
-            .findOne({ email: req.payload.email })
+            .findOne({ email: req.auth.email })
             .exec((err, user) => {
                 if (!user){
                     return res
